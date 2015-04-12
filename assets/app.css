@@ -1,0 +1,17 @@
+input.ng-invalid-required.ng-touched {
+  border-color: red;
+  background-color: #FFAABB;
+}
+@media (min-width: 768px) {
+  .form-inline input {
+    margin-right: 1em;
+  }
+  #postUsername {
+    min-width: 15em;
+  }
+  #postBody {
+    min-width: 20em;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yZXVlbGpvaG5kaWxpZy9Qcm9qZWN0cy9zb2NuZXRhcHAvY3NzL2FwcC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLEtBQUssb0JBQW9CO0VBQ3hCLGlCQUFBO0VBQ0EseUJBQUE7O0FBT0QsUUFMdUI7RUFDdEIsWUFBYTtJQUFPLGlCQUFBOztFQUNwQjtJQUFlLGVBQUE7O0VBQ2Y7SUFBVyxlQUFBIiwiZmlsZSI6ImFwcC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpbnB1dC5uZy1pbnZhbGlkLXJlcXVpcmVkLm5nLXRvdWNoZWQge1xuXHRib3JkZXItY29sb3I6cmVkO1xuXHRiYWNrZ3JvdW5kLWNvbG9yOiNGRkFBQkI7XG59XG5AbWVkaWEobWluLXdpZHRoOjc2OHB4KXtcblx0LmZvcm0taW5saW5lIGlucHV0IHttYXJnaW4tcmlnaHQ6MWVtO31cblx0I3Bvc3RVc2VybmFtZSB7bWluLXdpZHRoOjE1ZW07fVxuXHQjcG9zdEJvZHkge21pbi13aWR0aDoyMGVtO31cbn1cbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ== */

@@ -1,32 +1,19 @@
-var express = require('express')
-var bodyParser = require('body-parser')
+// modules
+var express = require('express');
+var bodyParser = require('body-parser');
+var jwt = require('jwt-simple');
 
-var app = express()
-app.use(bodyParser.json())
+// instantiations and configs
+var app = express();
+app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
- res.sendfile('layouts/posts.html')
-})
 
-app.get('/api/posts', function (req, res, next) {
-  Post.find(function(err, posts) {
-    if (err) { return next(err) }
-    res.json(posts)
-  })
-})
+// routers/controllers
+app.use('/api/posts',require('./controllers/api/posts'));
+app.use(require('./controllers/static'));
+app.use(require('./rest/auth'));
 
-var Post = require('./models/post')
-app.post('/api/posts', function (req, res, next) {
-  var post = new Post({
-    username: req.body.username,
-    body: req.body.body
-  })
-  post.save(function (err, post) {
-    if (err) { return next(err) }
-    res.json(201, post)
-  })
-})
 
 app.listen(3000, function () {
-  console.log('Server listening on', 3000)
-})
+  console.log('Server listening on', 3000);
+});
