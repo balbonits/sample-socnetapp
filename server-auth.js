@@ -11,20 +11,29 @@ app.use(bodyParser.json());
 var users = [{username:'dickeyxxx',password:'pass'}];
 var secretKey = 'supersecretkey';
 
-// functions
-function findUserByUsername(username){
-	return _.find(users, {username:username});
-}
 
 // routers/controllers
 app.use('/api/posts',require('./controllers/api/posts'));
 app.use(require('./controllers/static'));
 
 
+// functions
+function findUserByUsername(username){
+	return _.find(users, {username:username});
+}
+
+function validateUser(user,password){
+	return user.password === password;
+}
+
+
 app.post('/session',function(req,res){
-	var username = req.body.username;
+	var user = findUserByUsername(req.body.username);
 	//TODO: Validate password
-	var token = jwt.encode({username: username},secretKey);
+	if(!validateUser(user,req.body.password)) {
+		return res.send(401); //Unauthorized
+	}
+	var token = jwt.encode({username:user.username},secretKey);
 	res.json(token);
 });
 
