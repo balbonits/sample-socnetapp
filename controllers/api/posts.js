@@ -12,13 +12,11 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-  var post = new Post({
-    username: req.body.username,
-    body: req.body.body
-  });
+  var post = new Post({body: req.body.body});
+  post.username = req.auth.username;
   post.save(function (err, post) {
     if (err) return next(err);
-    res.json(201, post);
+    res.status(201).json(post);
   });
 });
 

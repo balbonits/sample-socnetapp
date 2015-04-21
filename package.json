@@ -13,6 +13,7 @@
     "gulp-less": "~3.0.2",
     "gulp-nodemon": "~2.0.2",
     "jwt-simple": "~0.3.0",
-    "lodash": "~3.6.0"
+    "lodash": "~3.6.0",
+    "bcrypt": "~0.8.2"
   }
 }
